@@ -10,17 +10,17 @@ def generate_launch_description():
         name='laserscan_multi_merger',
         output='screen',
         parameters=[{
-            'destination_frame': 'base_link',
+            'destination_frame': 'laser',
             'cloud_destination_topic': '/merged_cloud',
             'scan_destination_topic': '/scan_multi',
-            'laserscan_topics': '/scansx /scandx',
+            'laserscan_topics': '/scan /scan_filtered',
             # LIST OF THE LASER SCAN TOPICS TO SUBSCRIBE
             'angle_min': -3.14,
             'angle_max': 3.14,
             'angle_increment': 0.00437,
             'scan_time': 0.0,
-            'range_min': 0.1,
-            'range_max': 2.0,
+            'range_min': 0.0,
+            'range_max': 100.0,
         }],
     )
 
